@@ -15,35 +15,21 @@ class Solution {
 			
 			String word = s;
 			boolean check = true;
-			System.out.println("---- checking word: "+s+" ----");
 			while(check) {
-				System.out.println("word: "+word);
 				boolean flag = false;
 				if(set.contains(word)) {
 					word = "";
-					System.out.println("got: "+s);
 					break;
 				}
 				for(int i=1; i < word.length(); i++) {
 					String sub = word.substring(0,i);
 					if(set.contains(sub)) {
-						System.out.println("front: set contains "+sub);
 						flag = true;
 						word = word.substring(i,word.length());
 						break;
 					}
 				}
-				if(!flag) {
-					for(int i=word.length()-2; i >=0; i--) {
-						String sub = word.substring(i,word.length());
-						if(set.contains(sub)) {
-							System.out.println("back: set contains "+sub);
-							flag = true;
-							word = word.substring(0,i);
-							break;
-						}
-					}
-				}
+				
 				if(!flag || word.length() == 0)
 					check = false;
 			}
