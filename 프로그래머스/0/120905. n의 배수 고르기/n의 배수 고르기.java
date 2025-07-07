@@ -8,7 +8,7 @@ class Solution {
         int[] result = new int[arr.size()];
         int i = 0;
         for(int a : arr)
-            result[i] = arr.get(i++);
+            result[i++] = a;
         
         return result;
     }
